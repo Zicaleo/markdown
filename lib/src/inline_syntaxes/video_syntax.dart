@@ -29,7 +29,7 @@ class VideoSyntax extends LinkSyntax {
 
     final element = Element('video', [source]);
     // element.attributes['alt'] = children.map((node) => node.textContent).join();
-    element.attributes['control'] = "";
+    element.attributes['controls'] = "controls";
     
     return element;
   }
