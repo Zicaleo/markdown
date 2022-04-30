@@ -22,13 +22,14 @@ class VideoSyntax extends LinkSyntax {
     String? title, {
     required List<Node> Function() getChildren,
   }) {
-    final children = getChildren();
+    // final children = getChildren();
 
     final source = Element.empty('source');
     source.attributes['src'] = destination;
 
     final element = Element('video', [source]);
-    element.attributes['alt'] = children.map((node) => node.textContent).join();
+    // element.attributes['alt'] = children.map((node) => node.textContent).join();
+    element.attributes['control'] = "";
     
     return element;
   }
