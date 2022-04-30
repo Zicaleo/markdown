@@ -16,6 +16,7 @@ import 'inline_syntaxes/inline_syntax.dart';
 import 'inline_syntaxes/line_break_syntax.dart';
 import 'inline_syntaxes/link_syntax.dart';
 import 'inline_syntaxes/text_syntax.dart';
+import 'inline_syntaxes/video_syntax.dart';
 
 /// Maintains the internal state needed to parse inline span elements in
 /// Markdown.
@@ -93,6 +94,7 @@ class InlineParser {
       // Custom link resolvers go after the generic text syntax.
       syntaxes.addAll([
         LinkSyntax(linkResolver: document.linkResolver),
+        VideoSyntax(linkResolver: document.imageLinkResolver),
         ImageSyntax(linkResolver: document.imageLinkResolver)
       ]);
 
